@@ -10,6 +10,7 @@ BACKUP_DIR="$HOME_DIR/backup_configs"
 
 # Command line argument flags
 SKIP_LIBS=false
+ONLY_LIBS=false
 RESTORE=false
 SAVE_CONFIG=false
 BACKUP=false
@@ -21,6 +22,7 @@ Usage: $(basename "$0") [OPTIONS]
 
 Options:
   --skip-libs       Skip library installation
+  --only-libs       Only install libraries and create aliases
   --restore         Restore configuration from backup
   --save-config     Save current configuration
   --backup	    Backup current configs
@@ -33,6 +35,7 @@ EOF
 while [[ $# -gt 0 ]]; do
 	case $1 in
 	--skip-libs) SKIP_LIBS=true ;;
+	--only-libs) ONLY_LIBS=true ;;
 	--restore) RESTORE=true ;;
 	--save-config) SAVE_CONFIG=true ;;
 	--backup) BACKUP=true ;;
